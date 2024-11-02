@@ -1,0 +1,167 @@
+* src/styles.css */
+
+/* src/styles.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Updated font with fallbacks */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fccf04;
+  color: white; 
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #030605;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: white; /* Changed from #c7ba8a to white */
+}
+
+/* Style for the drag-and-drop upload area container */
+.file-upload {
+  border: 2px dashed #aaa;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #555;
+  transition: background-color 0.2s ease;
+  margin-bottom: 20px;
+}
+
+/* Change background on drag over */
+.file-upload.dragging {
+  background-color: #9f1539;
+  border-color: #000;
+}
+
+/* Style the default file input to be hidden */
+.file-upload input[type="file"] {
+  display: none;
+}
+
+/* Custom styling for file upload text */
+.file-upload p {
+  font-size: 16px;
+  font-weight: bold;
+  color: white; 
+}
+
+/* Style for a custom button to trigger file upload */
+.file-upload label {
+  display: inline-block;
+  background-color: #c66205;
+  color: white; 
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+}
+
+.file-name {
+  display: block;
+  margin-top: 8px;
+  color: white; 
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Hover effect for the custom upload button */
+.file-upload label:hover {
+  background-color: #9f1539;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+button#playButton {
+  background-color: #9f1539;
+  color: white; 
+}
+
+button#pauseButton {
+  background-color: #c66205;
+  color: white; /* Changed from #c7ba8a to white */
+}
+
+button#stopButton {
+  background-color: #c33019;
+  color: white; /* Changed from #c7ba8a to white */
+}
+
+button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.crossfade-container {
+  margin-bottom: 20px;
+}
+
+.crossfade-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  background: #00bcd4;
+  border-radius: 50%;
+  cursor: pointer;
+  appearance: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #00bcd4;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  background: white;
+  height: 6px;
+  border-radius: 5px;
+}

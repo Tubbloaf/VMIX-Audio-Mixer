@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Build directories
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.log
+
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Cache and dependencies
+package-lock.json
+yarn.lock
+
+# Source map files
+*.map
+
+# MacOS-specific
+.DS_Store
+
+# Debugging files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+

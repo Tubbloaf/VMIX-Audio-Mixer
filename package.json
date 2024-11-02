@@ -1,0 +1,36 @@
+{
+    "name": "audio-mixer-app",
+    "version": "1.0.0",
+    "description": "A web-based audio mixer with crossfade functionality",
+    "main": "src/app.js",
+    "scripts": {
+        "start": "webpack serve --mode development",
+        "build": "webpack --mode production",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "audio",
+        "mixer",
+        "web",
+        "crossfade",
+        "drag-and-drop"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.18.2",
+        "wavesurfer.js": "^7.8.8"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.26.0",
+        "@babel/preset-env": "^7.26.0",
+        "babel-loader": "^9.2.1",
+        "clean-webpack-plugin": "^4.0.0",
+        "css-loader": "^7.1.2",
+        "html-webpack-plugin": "^5.6.3",
+        "style-loader": "^4.0.0",
+        "webpack": "^5.96.1",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.13.3"
+    }
+}
