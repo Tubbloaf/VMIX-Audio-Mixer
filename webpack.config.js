@@ -1,45 +1,46 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // Import the CleanWebpackPlugin
 
 module.exports = {
-    mode: 'development', // Change to 'production' for production builds
-    entry: './src/app.js', // Entry point for your application
+    mode: 'development',
+    entry: './src/app.js',
     output: {
-        filename: 'main.js', // Output bundle file
-        path: path.resolve(__dirname, 'dist'), // Output directory
-        clean: true, // Clean the output directory before each build (this is optional since the plugin will also handle this)
+        filename: 'main.js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/', // Ensures the correct path for asset loading
+        clean: true, // Cleans the output directory before each build
     },
     module: {
         rules: [
             {
-                test: /\.js$/, // Process JavaScript files
-                exclude: /node_modules/, // Exclude node_modules
+                test: /\.js$/,
+                exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader', // Use Babel for transpiling
+                    loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env'], // Use the latest JavaScript features
+                        presets: ['@babel/preset-env'],
                     },
                 },
             },
             {
-                test: /\.css$/, // Process CSS files
+                test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
         ],
     },
     resolve: {
-        extensions: ['.js', '.json'], // Resolve JS and JSON extensions
+        extensions: ['.js', '.json'],
     },
     devServer: {
-        static: path.join(__dirname, 'dist'), // Serve from the dist directory
-        port: 8080, // Development server port
+        static: {
+            directory: path.join(__dirname, 'dist'), // Serves static content properly
+        },
+        port: 8080,
     },
     plugins: [
-        new CleanWebpackPlugin(), // Add the CleanWebpackPlugin to the plugins array
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'index.html'), // Template for index.html
-            filename: 'index.html', // Output filename for the generated HTML file
+            template: path.resolve(__dirname, 'index.html'),
+            filename: 'index.html',
         }),
     ],
 };
